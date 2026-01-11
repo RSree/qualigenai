@@ -1,0 +1,128 @@
+:root {
+    /* Extracted from your logo colors */
+    --brand-orange: #f0932b;
+    --brand-blue: #3b82f6;
+    --main-gradient: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-blue) 100%);
+    /* Deep gradient background inspired by logo */
+    --bg-dark: linear-gradient(135deg, #0f0a05 0%, #050505 50%, #050810 100%);
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    /* background: #111025;  */
+    /* background-color: #9b4dca; 
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(30, 100%, 62%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(217, 91%, 60%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(199, 89%, 48%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(335, 78%, 61%, 1) 0px, transparent 50%);
+      color: #ffffff;  */
+
+}
+
+.head-main{
+    background-color: #9b4dca; 
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(30, 100%, 62%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(217, 91%, 60%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(199, 89%, 48%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(335, 78%, 61%, 1) 0px, transparent 50%);
+      color: #ffffff; 
+      padding: 6% 0;
+}
+.section-two{
+    background-color: #f6fdff; 
+    padding: 6% 0;
+}
+.pink-text{
+    color: #a92582;
+}
+.blue-text{
+    color: #2d3678;
+}
+
+.section-three{
+    background-color: #fff; 
+    padding: 6% 0;
+}
+.section-six{
+    background-color: #fff; 
+    padding: 6% 0;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: rgb(0 0 0 / 3%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.glass-card:hover {
+    border-color: var(--logo-blue);
+    transform: translateY(-5px);
+}
+
+.navbar {
+    background: #111025;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-text {
+    font-weight: 800;
+    letter-spacing: -1px;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-brand {
+    background: linear-gradient(
+        135deg, 
+        #ff9a3d 0%,   /* Warm Orange */
+        #e94e77 25%,  /* Pinkish-Red */
+        #9b4dca 50%,  /* Deep Purple */
+        #3b82f6 75%,  /* Royal Blue */
+        #0ea5e9 100%  /* Bright Cyan */
+      );
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 0.75rem;
+}
+
+.btn-brand:hover {
+    opacity: 0.9;
+    color: white;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.tech-json {
+    background: #fff;
+    border-left: 4px solid var(--logo-orange);
+    font-family: 'Monaco', 'Consolas', monospace;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+footer {
+    background: #111025;
+    padding: 4rem 0 2rem;
+}
+.footer p{
+    color: #fff;
+}
+
+.nav-link{
+    color: #fff;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.text-secondary {
+    color: #fff !important;
+}
