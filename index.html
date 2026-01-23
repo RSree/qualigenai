@@ -362,6 +362,60 @@
         </div>
     </footer>
 
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+   <script src="assets/js/bootstrap.bundle.min.js"></script>
+	
+	<script>
+    // Use the URL from your successful execution log
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzpj2CaWPPrjdQWU863Tq_l2oWmQfaPhiADeWtQZEtdK04y5d_2PJ98a8ILsIb-tPh-Gg/exec';
+
+    // Select the button more specifically using its class from your HTML
+    const submitBtn = document.querySelector('.btn-brand.w-100');
+
+    if (submitBtn) {
+        submitBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+
+            // Get values using more reliable selectors
+            const formData = {
+                fullName: document.querySelector('input[placeholder="John Doe"]').value,
+                companyEmail: document.querySelector('input[placeholder="john@enterprise.com"]').value,
+                primaryInterest: document.querySelector('select').value,
+                projectDetails: document.querySelector('textarea').value
+            };
+
+            // Change button text to show it's working
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            try {
+                // Using 'no-cors' mode is often necessary for Google Scripts from static sites
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', 
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                // Since 'no-cors' won't let us read the response, we assume success if no error is thrown
+                alert("Success! Your request has been sent to QualiGenAI.");
+                
+                // Optional: Clear the form
+                document.querySelector('input[placeholder="John Doe"]').value = '';
+                document.querySelector('input[placeholder="john@enterprise.com"]').value = '';
+                document.querySelector('textarea').value = '';
+
+            } catch (err) {
+                console.error("Submission error:", err);
+                alert("Submission failed. Please try again.");
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+    </script>
+	
 </body>
 </html>
